@@ -519,7 +519,7 @@ impl VarContext {
     }
 
     /// `names` plus every variable that a needed `--expand-variable` definition
-    /// references, transitively (e.g. `IQ_API_KEY={{IQ_DEV_KEY}}` needs `IQ_DEV_KEY`).
+    /// references, transitively (e.g. `API_KEY={{DEV_API_KEY}}` needs `DEV_API_KEY`).
     fn with_expansion_inputs(&self, names: &BTreeSet<String>) -> BTreeSet<String> {
         let mut out = names.clone();
         loop {
