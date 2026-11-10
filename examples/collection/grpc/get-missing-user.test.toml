@@ -1,0 +1,6 @@
+[expect]
+status = "NOT_FOUND"
+
+[[expect.json]]
+path = "$.message"
+contains = "not found"

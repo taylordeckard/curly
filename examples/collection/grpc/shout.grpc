@@ -1,0 +1,7 @@
+# @name Shout (gRPC, bidirectional streaming)
+# @description Each data line is one message; descriptors come from proto/users.proto.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/Shout
+--proto proto/users.proto
+--data "{\"text\": \"hello\"}"
+--data "{\"text\": \"world\"}"

@@ -1,0 +1,6 @@
+order = ["create-user.curl", "get-created-user.curl", "list-users.curl", "get-user.curl", "get-missing-user.curl"]
+
+# Defaults for requests in this folder. The environment, captures, data rows,
+# and --var all override these.
+[vars]
+expected_name = "Ada Lovelace"

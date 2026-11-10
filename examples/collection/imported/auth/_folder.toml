@@ -1,0 +1,3 @@
+# Log in and inspect the current user.
+# Run order follows imported/openapi.yaml.
+order = ["login.curl", "get-current-user.curl"]

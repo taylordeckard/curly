@@ -1,0 +1,9 @@
+# @name Get user (GraphQL)
+# @description Reads graphql/get-user.graphql and graphql/get-user.vars.json.
+# @tags graphql
+--variable GQL_QUERY@graphql/get-user.graphql
+--variable GQL_VARS@graphql/get-user.vars.json
+--expand-url {{BASE_URL}}/graphql
+--header "Content-Type: application/json"
+--header "Accept: application/json"
+--expand-data "{\"query\":\"{{GQL_QUERY:json}}\",\"variables\":{{GQL_VARS}}}"

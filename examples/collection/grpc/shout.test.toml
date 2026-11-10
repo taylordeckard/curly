@@ -1,0 +1,6 @@
+[expect]
+status = "OK"
+
+[[expect.json]]
+path = "$[*].text"
+eq = ["HELLO", "WORLD"]

@@ -1,0 +1,8 @@
+[expect]
+status = 200
+
+[expect.headers]
+Content-Type = { contains = "text/html" }
+
+[expect.body]
+matches = "<h1>\\s*Hello\\s*</h1>"

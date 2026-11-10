@@ -1,0 +1,19 @@
+[expect]
+status = 200
+
+[expect.headers]
+Content-Type = { matches = "^application/json" }
+
+[[expect.json]]
+path = "$.token_type"
+eq = "Bearer"
+
+[[expect.json]]
+path = "$.access_token"
+type = "string"
+len = 64
+
+# Later requests in the same run get {{API_TOKEN}}. The value is redacted
+# automatically because the response field is masked.
+[capture]
+API_TOKEN = "$.access_token"

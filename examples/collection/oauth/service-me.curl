@@ -1,0 +1,6 @@
+# @name Current user (client credentials)
+# @description Uses the token from oauth/_folder.toml. With plain curl:
+#   export ACCESS_TOKEN="$(curly auth token oauth)"
+# @tags oauth
+--expand-url {{BASE_URL}}/me
+--expand-header "Authorization: Bearer {{ACCESS_TOKEN}}"

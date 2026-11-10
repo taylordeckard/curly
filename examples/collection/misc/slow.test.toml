@@ -1,0 +1,7 @@
+[expect]
+status = 200
+max_time_ms = 2000
+
+[[expect.json]]
+path = "$.slept_ms"
+eq = 300

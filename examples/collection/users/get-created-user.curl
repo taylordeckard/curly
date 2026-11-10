@@ -1,0 +1,6 @@
+# @name Get the created user
+# @description Fetches the user created by create-user.curl, using the captured created_id.
+#   Run on its own, created_id falls back to the environment default.
+# @tags users
+--expand-url {{BASE_URL}}/users/{{created_id}}
+--header "Accept: application/json"

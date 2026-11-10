@@ -1,0 +1,5 @@
+# @name List users (gRPC, server streaming)
+# @description The response body is a JSON array of every streamed message.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/ListUsers
+--data "{\"limit\": 2}"

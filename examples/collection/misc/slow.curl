@@ -1,0 +1,4 @@
+# @name Slow endpoint
+# @description Sleeps 300 ms before answering; useful for timing.
+# @tags misc
+--expand-url {{BASE_URL}}/slow?ms=300

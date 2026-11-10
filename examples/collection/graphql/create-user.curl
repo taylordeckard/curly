@@ -1,0 +1,8 @@
+# @name Create user (GraphQL)
+# @tags graphql
+--variable GQL_QUERY@graphql/create-user.graphql
+--variable GQL_VARS@graphql/create-user.vars.json
+--expand-url {{BASE_URL}}/graphql
+--header "Content-Type: application/json"
+--header "Accept: application/json"
+--expand-data "{\"query\":\"{{GQL_QUERY:json}}\",\"variables\":{{GQL_VARS}}}"

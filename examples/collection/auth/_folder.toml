@@ -1,0 +1,2 @@
+# Log in first so me.curl can use the captured API_TOKEN.
+order = ["login.curl", "me.curl"]

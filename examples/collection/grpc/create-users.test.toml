@@ -1,0 +1,10 @@
+[expect]
+status = "OK"
+
+[[expect.json]]
+path = "$.created"
+eq = 2
+
+[[expect.json]]
+path = "$.ids"
+len = 2

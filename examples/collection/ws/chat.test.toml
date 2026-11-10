@@ -1,0 +1,14 @@
+[[step]]
+receive = 2000
+[[step.json]]
+path = "$.type"
+eq = "welcome"
+
+[[step]]
+send = '{"type":"say","text":"authenticated"}'
+
+[[step]]
+receive = 2000
+[[step.json]]
+path = "$.text"
+eq = "authenticated"

@@ -1,0 +1,19 @@
+[expect]
+status = "2xx"
+max_time_ms = 1000
+
+[[expect.json]]
+path = "$.items"
+type = "array"
+
+[[expect.json]]
+path = "$.total"
+gte = 2
+
+[[expect.json]]
+path = "$.items[*].id"
+contains = 1
+
+[[expect.json]]
+jq = "[.items[] | select(.email | endswith(\"@example.test\"))] | length"
+gte = 2

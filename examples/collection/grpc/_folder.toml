@@ -1,0 +1,2 @@
+# gRPC examples against curly-testserver (gRPC port = HTTP port + 1).
+order = ["get-user.grpc", "get-missing-user.grpc", "list-users.grpc", "create-users.grpc", "shout.grpc", "whoami.grpc"]

@@ -1,0 +1,4 @@
+# @name Health check
+# @description Returns {"status":"ok"} when the test server is up.
+# @tags meta
+--expand-url {{BASE_URL}}/health

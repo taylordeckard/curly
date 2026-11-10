@@ -1,0 +1,13 @@
+[expect]
+status = 201
+schema = "schemas/user.json"
+
+[expect.headers]
+Location = { matches = "^/users/\\d+$" }
+
+[[expect.json]]
+path = "$.name"
+eq = "Grace Hopper"
+
+[capture]
+created_id = "$.id"

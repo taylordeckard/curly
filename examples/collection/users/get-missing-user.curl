@@ -1,0 +1,5 @@
+# @name Get a missing user
+# @description Returns 404 with a JSON error body.
+# @tags users
+--expand-url {{BASE_URL}}/users/999
+--header "Accept: application/json"

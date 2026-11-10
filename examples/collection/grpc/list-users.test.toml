@@ -1,0 +1,10 @@
+[expect]
+status = 0
+
+[[expect.json]]
+path = "$"
+len = 2
+
+[[expect.json]]
+path = "$[0].name"
+eq = "Ada Lovelace"

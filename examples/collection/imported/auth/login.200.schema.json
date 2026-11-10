@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/Token",
+  "$defs": {
+    "Token": {
+      "type": "object",
+      "required": [
+        "access_token",
+        "token_type"
+      ],
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "token_type": {
+          "type": "string"
+        },
+        "expires_in": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

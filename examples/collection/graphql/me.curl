@@ -1,0 +1,10 @@
+# @name Current user (GraphQL)
+# @description Needs API_TOKEN (captured by auth/login.curl in collection runs).
+# @tags graphql
+--variable GQL_QUERY@graphql/me.graphql
+--variable GQL_VARS@graphql/me.vars.json
+--expand-url {{BASE_URL}}/graphql
+--header "Content-Type: application/json"
+--header "Accept: application/json"
+--expand-header "Authorization: Bearer {{API_TOKEN}}"
+--expand-data "{\"query\":\"{{GQL_QUERY:json}}\",\"variables\":{{GQL_VARS}}}"

@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "items": [
+      {
+        "email": "ada@example.test",
+        "id": 1,
+        "name": "Ada Lovelace"
+      },
+      {
+        "email": "alan@example.test",
+        "id": 2,
+        "name": "Alan Turing"
+      }
+    ],
+    "total": 2
+  }
+}

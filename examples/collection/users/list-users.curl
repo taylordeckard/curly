@@ -1,0 +1,5 @@
+# @name List users
+# @description Lists users, at most 10.
+# @tags users
+--expand-url {{BASE_URL}}/users?limit=10
+--header "Accept: application/json"

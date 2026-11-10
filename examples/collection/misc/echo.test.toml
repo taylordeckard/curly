@@ -1,0 +1,23 @@
+[expect]
+status = 200
+
+[[expect.json]]
+path = "$.method"
+eq = "PUT"
+
+[[expect.json]]
+path = "$.body"
+eq = "line one\nline two"
+
+[[expect.json]]
+path = "$.headers['x-client']"
+eq = "curly-examples"
+
+[[expect.json]]
+path = "$.query"
+eq = "debug=1"
+
+# Optional hook: gets the exchange as JSON on stdin, exits non-zero to fail,
+# and may print {"assertions": [...], "captures": {...}} on stdout.
+[hook]
+script = "scripts/check-echo.sh"

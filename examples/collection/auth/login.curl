@@ -1,0 +1,6 @@
+# @name Log in
+# @description Exchanges the demo password for a bearer token.
+#   The token in the response is redacted unless you pass --show-secrets.
+# @tags auth
+--expand-url {{BASE_URL}}/login
+--expand-json "{\"username\":\"demo\",\"password\":\"{{DEMO_PASSWORD:json}}\"}"

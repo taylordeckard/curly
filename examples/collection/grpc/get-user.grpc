@@ -1,0 +1,5 @@
+# @name Get user (gRPC)
+# @description Unary call; descriptors come from server reflection.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/GetUser
+--data "{\"id\": 1}"

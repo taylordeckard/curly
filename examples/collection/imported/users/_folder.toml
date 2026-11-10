@@ -1,0 +1,3 @@
+# User management.
+# Run order follows imported/openapi.yaml.
+order = ["list-users.curl", "create-user.curl", "get-user.curl", "delete-user.curl"]

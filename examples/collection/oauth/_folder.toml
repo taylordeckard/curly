@@ -1,0 +1,12 @@
+# Machine-to-machine OAuth: curly fetches a token with the client credentials
+# grant, caches it in the OS keychain, and passes it as {{ACCESS_TOKEN}}.
+order = ["service-me.curl", "browser/"]
+
+[auth]
+type = "oauth2"
+flow = "client_credentials"
+token_url = "{{BASE_URL}}/oauth/token"
+client_id = "{{OAUTH_CLIENT_ID}}"
+client_secret = "{{OAUTH_CLIENT_SECRET}}"
+scopes = ["users:read"]
+token_var = "ACCESS_TOKEN"

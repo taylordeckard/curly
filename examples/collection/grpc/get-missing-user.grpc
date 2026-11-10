@@ -1,0 +1,5 @@
+# @name Get a missing user (gRPC)
+# @description Fails with NOT_FOUND; the body carries the gRPC status and message.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/GetUser
+--data "{\"id\": 999}"

@@ -1,0 +1,12 @@
+# Data-driven: curly run users/get-user.curl --data data/users.csv
+[expect]
+status = 200
+schema = "schemas/user.json"
+
+[[expect.json]]
+path = "$.id"
+eq = "{{user_id}}"
+
+[[expect.json]]
+path = "$.name"
+eq = "{{expected_name}}"

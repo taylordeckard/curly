@@ -1,0 +1,32 @@
+# Each step does one thing: send, send_file, receive (wait up to N ms), sleep_ms, or close.
+# Checks and captures on a `receive` step apply to the message it received.
+
+[[step]]
+receive = 2000
+[[step.json]]
+path = "$.type"
+eq = "welcome"
+[step.capture]
+session_id = "$.session"
+
+[[step]]
+send = '{"type":"join","room":"{{room}}"}'
+
+[[step]]
+receive = 2000
+[[step.json]]
+path = "$.room"
+eq = "{{room}}"
+
+[[step]]
+send = '{"type":"say","text":"hello from {{session_id}}"}'
+
+[[step]]
+receive = 2000
+body = { contains = "hello from" }
+[[step.json]]
+path = "$.text"
+eq = "hello from {{session_id}}"
+
+[[step]]
+close = true

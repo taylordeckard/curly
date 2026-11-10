@@ -1,0 +1,5 @@
+# @name Current user
+# @description Requires API_TOKEN (from auth/login.curl).
+# @tags auth
+--expand-url {{BASE_URL}}/me
+--expand-header "Authorization: Bearer {{API_TOKEN}}"

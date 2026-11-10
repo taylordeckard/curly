@@ -1,0 +1,6 @@
+[expect]
+status = 404
+
+[[expect.json]]
+path = "$.error"
+eq = "user not found"

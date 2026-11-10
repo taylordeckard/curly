@@ -1,0 +1,7 @@
+[expect]
+status = 200
+schema = "schemas/user.json"
+
+[[expect.json]]
+path = "$.id"
+eq = "{{created_id}}"

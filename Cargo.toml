@@ -1,0 +1,65 @@
+[workspace]
+members = [".", "examples/server"]
+
+[package]
+name = "curly"
+version = "0.1.0"
+edition = "2024"
+description = "API-workbench features on top of curl and plain files"
+license = "MIT"
+
+[[bin]]
+name = "curly"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.104"
+apollo-compiler = "1"
+axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio", "json", "query"] }
+base64 = "0.23.1"
+chrono = { version = "0.4.45", features = ["serde"] }
+clap = { version = "4.6.7", features = ["derive", "env", "wrap_help"] }
+clap_complete = { version = "4.6.11", features = ["unstable-dynamic"] }
+csv = "1.4.0"
+hyper-util = { version = "0.1.21", features = ["tokio"] }
+jaq-core = "3.1.2"
+jaq-json = { version = "2.0.3", features = ["serde"] }
+jaq-std = "3.0.4"
+jsonschema = { version = "0.61.0", default-features = false, features = ["resolve-file"] }
+keyring = { version = "3", features = ["apple-native", "windows-native", "linux-native"] }
+prost = "0.14"
+prost-reflect = { version = "0.16", features = ["serde"] }
+prost-types = "0.14"
+protox = "0.10"
+quick-xml = "0.42.0"
+rand = "0.10.3"
+ratatui = "0.30.2"
+regex = "1.13.1"
+rpassword = "7"
+rusqlite = { version = "0.41.1", features = ["bundled"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+rustls-native-certs = "0.8.5"
+rustls-pki-types = "1.15.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+serde_json_path = "0.7.2"
+sha2 = "0.11.1"
+shlex = "2.0.1"
+similar = "3.2.1"
+syntect = { version = "5.3.0", default-features = false, features = ["default-syntaxes", "default-themes", "regex-fancy", "parsing", "html"] }
+tempfile = "3.27.0"
+tokio = { version = "1.54.1", features = ["rt", "net", "time", "macros", "rt-multi-thread", "signal"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "tls12"] }
+tokio-stream = "0.1.19"
+toml = "1.2.1"
+tonic = { version = "0.14", default-features = false, features = ["transport", "codegen"] }
+tonic-reflection = { version = "0.14", default-features = false }
+tower = { version = "0.5", features = ["util"] }
+tungstenite = { version = "0.30", features = ["rustls-tls-native-roots"] }
+yaml_serde = "0.10"
+
+[dev-dependencies]
+curly-testserver = { path = "examples/server" }
+jsonschema = { version = "0.61.0", default-features = false }
+quick-xml = "0.42.0"
+serde_json = "1.0.154"

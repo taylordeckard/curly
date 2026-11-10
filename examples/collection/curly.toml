@@ -1,0 +1,10 @@
+[project]
+name = "curly-examples"
+id = "curly-examples"
+default_env = "local"
+
+[history]
+enabled = true
+
+[redact]
+enabled = true

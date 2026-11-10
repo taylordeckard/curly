@@ -1,0 +1,5 @@
+# @name Current user (browser login)
+# @description Uses the token from `curly auth login oauth/browser`.
+# @tags oauth
+--expand-url {{BASE_URL}}/me
+--expand-header "Authorization: Bearer {{ACCESS_TOKEN}}"

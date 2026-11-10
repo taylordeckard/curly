@@ -1,0 +1,59 @@
+// gRPC API of curly-testserver (also used by examples/server/build.rs) (port 8788 by default; server reflection is on).
+syntax = "proto3";
+
+package curly.test.v1;
+
+import "google/protobuf/empty.proto";
+
+// User management over gRPC, backed by the same users as the REST API.
+service UserService {
+  // One user by id; NOT_FOUND if it does not exist.
+  rpc GetUser(GetUserRequest) returns (User);
+  // Streams users, at most `limit` (0 = all).
+  rpc ListUsers(ListUsersRequest) returns (stream User);
+  // Creates every user sent on the stream.
+  rpc CreateUsers(stream NewUser) returns (CreateUsersResponse);
+  // Echoes each message back, upper-cased.
+  rpc Shout(stream ChatMessage) returns (stream ChatMessage);
+  // Requires `authorization: Bearer <token>` metadata.
+  rpc WhoAmI(google.protobuf.Empty) returns (WhoAmIResponse);
+}
+
+enum Role {
+  ROLE_UNSPECIFIED = 0;
+  ROLE_ADMIN = 1;
+  ROLE_MEMBER = 2;
+}
+
+message GetUserRequest {
+  int64 id = 1;
+}
+
+message User {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  Role role = 4;
+}
+
+message ListUsersRequest {
+  int32 limit = 1;
+}
+
+message NewUser {
+  string name = 1;
+  string email = 2;
+}
+
+message CreateUsersResponse {
+  int32 created = 1;
+  repeated int64 ids = 2;
+}
+
+message ChatMessage {
+  string text = 1;
+}
+
+message WhoAmIResponse {
+  string username = 1;
+}

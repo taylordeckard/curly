@@ -1,0 +1,5 @@
+# @name Create user
+# @description Creates a user from users/create-user.json (paths are relative to the collection root).
+# @tags users
+--expand-url {{BASE_URL}}/users
+--json @users/create-user.json

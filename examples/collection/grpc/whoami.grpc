@@ -1,0 +1,5 @@
+# @name Who am I (gRPC metadata auth)
+# @description Sends the bearer token as `authorization` metadata.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/WhoAmI
+--expand-header "authorization: Bearer {{API_TOKEN}}"

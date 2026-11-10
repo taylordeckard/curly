@@ -1,0 +1,2 @@
+# Run order for `curly run .` (unlisted files and folders run afterwards).
+order = ["health.curl", "auth/", "users/", "formats/", "misc/", "imported/", "oauth/", "graphql/", "ws/", "grpc/"]

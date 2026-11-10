@@ -1,0 +1,10 @@
+[expect]
+status = "OK"
+
+[[expect.json]]
+path = "$.name"
+eq = "Ada Lovelace"
+
+[[expect.json]]
+path = "$.role"
+eq = "ROLE_ADMIN"

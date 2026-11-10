@@ -1,0 +1,8 @@
+# @name Echo
+# @description The server reflects the request, so you can see exactly what curl sent.
+# @tags misc
+--expand-url {{BASE_URL}}/echo?debug=1
+--request PUT
+--header "Content-Type: text/plain"
+--header "X-Client: curly-examples"
+--data-binary "line one\nline two"

@@ -1,0 +1,29 @@
+# Environment: local test server (cargo run -p curly-testserver)
+#
+# Plain curl, from this directory:
+#   curl -K envs/local.curl -K users/get-user.curl
+#
+# BASE_URL can be overridden from the shell; secrets come from the shell,
+# envs/local.secrets.curl (git-ignored), or `curly secret set NAME`.
+--variable %BASE_URL=http://127.0.0.1:8787
+--variable %WS_URL=ws://127.0.0.1:8787
+--variable %GRPC_TARGET=127.0.0.1:8788
+--variable user_id=1
+# Default for standalone runs; collection runs capture it from create-user.curl.
+--variable created_id=1
+--variable %DEMO_PASSWORD=
+--variable %API_TOKEN=
+# OAuth clients of the test server (oauth/). The secret is printed by
+# curly-testserver at startup: export OAUTH_CLIENT_SECRET=... or curly secret set.
+--variable OAUTH_CLIENT_ID=curly-service
+--variable %OAUTH_CLIENT_SECRET=
+--variable OAUTH_PUBLIC_CLIENT_ID=curly-test-client
+# Filled by curly from [auth]; for plain curl: export ACCESS_TOKEN="$(curly auth token oauth)"
+--variable %ACCESS_TOKEN=
+
+# Added by `curly import` from imported/openapi.yaml (curly test server)
+# path parameter `userId`
+--variable userId=1
+# Bearer token for `bearerAuth`
+# Secret: export BEARER_AUTH_TOKEN=... or run `curly secret set BEARER_AUTH_TOKEN -e local`
+--variable %BEARER_AUTH_TOKEN=

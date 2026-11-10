@@ -1,0 +1,3 @@
+# curly test server 1.0.0
+# Folders run in the order tags appear in imported/openapi.yaml.
+order = ["meta/", "users/", "auth/"]

@@ -1,0 +1,6 @@
+# @name Get user
+# @description Fetches one user by id.
+#   Set user_id in the environment or with --var user_id=2.
+# @tags users
+--expand-url {{BASE_URL}}/users/{{user_id}}
+--header "Accept: application/json"

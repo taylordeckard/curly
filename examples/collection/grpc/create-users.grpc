@@ -1,0 +1,5 @@
+# @name Create users (gRPC, client streaming)
+# @description A JSON array in one data line sends one message per element.
+# @tags grpc
+--expand-url grpc://{{GRPC_TARGET}}/curly.test.v1.UserService/CreateUsers
+--data @grpc/create-users.json

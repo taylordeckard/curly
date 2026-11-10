@@ -1,0 +1,3 @@
+# @name HTML response
+# @tags formats
+--expand-url {{BASE_URL}}/html

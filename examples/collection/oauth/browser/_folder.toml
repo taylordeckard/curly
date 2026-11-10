@@ -1,0 +1,14 @@
+# Browser login: authorization code with PKCE. The nearer [auth] here
+# overrides oauth/_folder.toml. Log in once with:
+#   curly auth login oauth/browser
+# curly opens the browser, catches the redirect on 127.0.0.1, caches the
+# tokens in the OS keychain, and refreshes them automatically.
+
+[auth]
+type = "oauth2"
+flow = "authorization_code"
+auth_url = "{{BASE_URL}}/oauth/authorize"
+token_url = "{{BASE_URL}}/oauth/token"
+client_id = "{{OAUTH_PUBLIC_CLIENT_ID}}"
+scopes = ["openid", "users:read"]
+pkce = true

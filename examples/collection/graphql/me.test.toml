@@ -1,0 +1,14 @@
+[expect]
+status = 200
+
+[[expect.json]]
+path = "$.errors"
+exists = false
+
+[[expect.json]]
+path = "$.data.me"
+exists = true
+
+[[expect.json]]
+path = "$.data.me"
+eq = "demo"

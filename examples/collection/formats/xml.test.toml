@@ -1,0 +1,8 @@
+[expect]
+status = 200
+
+[expect.headers]
+Content-Type = "application/xml"
+
+[expect.body]
+contains = "<title>SICP</title>"

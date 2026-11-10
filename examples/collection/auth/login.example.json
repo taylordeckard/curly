@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "access_token": "[REDACTED]",
+    "expires_in": 3600,
+    "token_type": "Bearer"
+  }
+}

@@ -1,0 +1,5 @@
+# WebSocket examples. Run scripted: curly run ws   Interactive: curly ws -i ws/echo.ws
+order = ["echo.ws", "chat.ws"]
+
+[vars]
+room = "lobby"
